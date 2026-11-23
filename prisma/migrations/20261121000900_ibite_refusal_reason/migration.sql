@@ -1,0 +1,4 @@
+CREATE TYPE "IbiteRefusalReason" AS ENUM ('PARTICIPATION', 'REPRESENTATIVE_AUTHORIZATION');
+
+ALTER TABLE "ibite_participation_refusals"
+ADD COLUMN "reason" "IbiteRefusalReason" NOT NULL DEFAULT 'PARTICIPATION';

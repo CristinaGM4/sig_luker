@@ -1,0 +1,359 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Account {
+  workshopEvaluations     WorkshopEvaluation[]
+  mttsReports             MttsWeeklyReport[]
+  captureOnly             Boolean                   @default(false) @map("capture_only")
+  selfParticipant         Participant?
+  ibiteAssignments        IbiteAssignment[]
+  professionalAssignments ProfessionalInstitution[]
+  submittedApplications   IbiteApplication[]
+  id                      String                    @id @default(uuid()) @db.Uuid
+  active                  Boolean                   @default(true)
+  roles                   AccountRole[]
+  sessions                AuthSession[]
+  institutions            AccountInstitution[]
+
+  @@map("accounts")
+}
+
+model Role {
+  id          String           @id @default(uuid()) @db.Uuid
+  code        String           @unique
+  label       String
+  accounts    AccountRole[]
+  permissions RolePermission[]
+
+  @@map("roles")
+}
+
+model Permission {
+  id    String           @id @default(uuid()) @db.Uuid
+  code  String           @unique
+  label String
+  roles RolePermission[]
+
+  @@map("permissions")
+}
+
+model AccountRole {
+  accountId String  @map("account_id") @db.Uuid
+  roleId    String  @map("role_id") @db.Uuid
+  account   Account @relation(fields: [accountId], references: [id], onDelete: Restrict)
+  role      Role    @relation(fields: [roleId], references: [id], onDelete: Restrict)
+
+  @@id([accountId, roleId])
+  @@index([roleId])
+  @@map("account_roles")
+}
+
+model RolePermission {
+  roleId       String     @map("role_id") @db.Uuid
+  permissionId String     @map("permission_id") @db.Uuid
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Restrict)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Restrict)
+
+  @@id([roleId, permissionId])
+  @@index([permissionId])
+  @@map("role_permissions")
+}
+
+model Institution {
+  mapPoints                InstitutionMapPoint[]
+  workshopEvaluations     WorkshopEvaluation[]
+  mttsReports              MttsWeeklyReport[]
+  ibiteCampaigns          IbiteCampaign[]
+  professionalAssignments ProfessionalInstitution[]
+  applications            IbiteApplication[]
+  id                      String                    @id @default(uuid()) @db.Uuid
+  code                    String                    @unique
+  name                    String
+  active                  Boolean                   @default(true)
+  accounts                AccountInstitution[]
+
+  @@map("institutions")
+}
+
+model InstitutionMapPoint {
+  sourceSha256  String?     @map("source_sha256") @db.Char(64)
+  sourcePosition Int?       @map("source_position")
+  id            String      @id @default(uuid()) @db.Uuid
+  institutionId String      @map("institution_id") @db.Uuid
+  label         String
+  source        String
+  location      Unsupported("geometry(Point,4326)")
+  institution   Institution @relation(fields: [institutionId], references: [id], onDelete: Restrict)
+
+  @@index([institutionId], map: "institution_map_points_institution_idx")
+  @@unique([sourceSha256, sourcePosition], map: "institution_map_points_source_key")
+  @@index([location], type: Gist, map: "institution_map_points_location_idx")
+  @@map("institution_map_points")
+}
+
+model MicrozonificationZone {
+  id                Int                                 @id
+  sourceSha256      String                              @map("source_sha256") @db.Char(64)
+  zone              String
+  sourceDescription String                              @map("source_description")
+  geometry          Unsupported("geometry(MultiPolygon,4326)")
+
+  @@index([geometry], type: Gist, map: "microzonification_zones_geometry_idx")
+  @@map("microzonification_zones")
+}
+
+model WorkshopEvaluation {
+  idempotencyKeyDigest String? @map("idempotency_key_digest") @db.Char(64)
+  requestDigest String? @map("request_digest") @db.Char(64)
+  id            String      @id @default(uuid()) @db.Uuid
+  institutionId String      @map("institution_id") @db.Uuid
+  authorId      String      @map("author_id") @db.Uuid
+  workshopDate  DateTime    @map("workshop_date") @db.Date
+  formVersion   String      @map("form_version")
+  payload       Json
+  createdAt     DateTime    @default(now()) @map("created_at") @db.Timestamptz(3)
+  institution   Institution @relation(fields: [institutionId], references: [id], onDelete: Restrict)
+  author        Account     @relation(fields: [authorId], references: [id], onDelete: Restrict)
+
+  @@index([institutionId, workshopDate], map: "workshop_evaluations_institution_date_idx")
+  @@unique([institutionId, authorId, idempotencyKeyDigest], map: "workshop_evaluations_retry_key")
+  @@map("workshop_evaluations")
+}
+
+model MttsWeeklyReport {
+  id            String      @id @default(uuid()) @db.Uuid
+  institutionId String     @map("institution_id") @db.Uuid
+  authorId      String      @map("author_id") @db.Uuid
+  site          String
+  siteKey       String      @map("site_key")
+  weekStart     DateTime    @map("week_start") @db.Date
+  weekEnd       DateTime    @map("week_end") @db.Date
+  formVersion   String      @map("form_version")
+  payload       Json
+  createdAt     DateTime    @default(now()) @map("created_at") @db.Timestamptz(3)
+  institution   Institution @relation(fields: [institutionId], references: [id], onDelete: Restrict)
+  author        Account     @relation(fields: [authorId], references: [id], onDelete: Restrict)
+
+  @@unique([institutionId, authorId, siteKey, weekStart], map: "mtts_weekly_report_unit_key")
+  @@index([institutionId, weekStart], map: "mtts_weekly_report_period_idx")
+  @@map("mtts_weekly_reports")
+}
+
+model AccountInstitution {
+  accountId     String      @map("account_id") @db.Uuid
+  institutionId String      @map("institution_id") @db.Uuid
+  account       Account     @relation(fields: [accountId], references: [id], onDelete: Restrict)
+  institution   Institution @relation(fields: [institutionId], references: [id], onDelete: Restrict)
+
+  @@id([accountId, institutionId])
+  @@index([institutionId])
+  @@map("account_institutions")
+}
+
+model AcademicPeriod {
+  ibiteCampaigns IbiteCampaign[]
+  applications   IbiteApplication[]
+  id             String             @id @default(uuid()) @db.Uuid
+  code           String             @unique
+  label          String
+  startsOn       DateTime           @map("starts_on") @db.Date
+  endsOn         DateTime           @map("ends_on") @db.Date
+
+  @@map("academic_periods")
+}
+
+model AuthSession {
+  tokenDigest String    @id @map("token_digest") @db.Char(64)
+  accountId   String    @map("account_id") @db.Uuid
+  expiresAt   DateTime  @map("expires_at") @db.Timestamptz(3)
+  revokedAt   DateTime? @map("revoked_at") @db.Timestamptz(3)
+  account     Account   @relation(fields: [accountId], references: [id], onDelete: Restrict)
+
+  @@index([accountId])
+  @@index([expiresAt])
+  @@map("auth_sessions")
+}
+
+model Instrument {
+  code     String              @id
+  versions InstrumentVersion[]
+
+  @@map("instruments")
+}
+
+model InstrumentVersion {
+  ibiteCampaigns IbiteCampaign[]
+  applications   IbiteApplication[]
+  instrumentCode String             @map("instrument_code")
+  variant        String
+  sourceVersion  String             @map("source_version")
+  ruleVersion    String             @map("rule_version")
+  sourceSha256   String             @map("source_sha256") @db.Char(64)
+  itemCount      Int                @map("item_count")
+  instrument     Instrument         @relation(fields: [instrumentCode], references: [code], onDelete: Restrict)
+
+  @@id([instrumentCode, variant, sourceVersion])
+  @@map("instrument_versions")
+}
+
+model ProfessionalInstitution {
+  revokedAt      DateTime?   @map("revoked_at") @db.Timestamptz(3)
+  professionalId String      @map("professional_id") @db.Uuid
+  institutionId  String      @map("institution_id") @db.Uuid
+  professional   Account     @relation(fields: [professionalId], references: [id], onDelete: Restrict)
+  institution    Institution @relation(fields: [institutionId], references: [id], onDelete: Restrict)
+
+  @@id([professionalId, institutionId])
+  @@index([institutionId])
+  @@map("professional_institutions")
+}
+
+model Participant {
+  ibiteCaptureDigest String?         @unique @map("ibite_capture_digest") @db.Char(64)
+  selfAccountId    String?            @unique @map("self_account_id") @db.Uuid
+  selfAccount      Account?           @relation(fields: [selfAccountId], references: [id], onDelete: Restrict)
+  ibiteAssignments IbiteAssignment[]
+  id               String             @id @default(uuid()) @db.Uuid
+  applications     IbiteApplication[]
+
+  @@map("participants")
+}
+
+model IbiteApplication {
+  idempotencyKeyDigest String?           @map("idempotency_key_digest") @db.Char(64)
+  requestDigest        String?           @map("request_digest") @db.Char(64)
+  assignmentId         String?           @map("assignment_id") @db.Uuid
+  assignment           IbiteAssignment?  @relation(fields: [assignmentId], references: [id], onDelete: Restrict)
+  id                   String            @id @default(uuid()) @db.Uuid
+  participantId        String            @map("participant_id") @db.Uuid
+  respondentId         String?           @map("respondent_id") @db.Uuid
+  institutionId        String            @map("institution_id") @db.Uuid
+  periodId             String            @map("period_id") @db.Uuid
+  instrumentCode       String            @map("instrument_code")
+  variant              String
+  sourceVersion        String            @map("source_version")
+  appliedAt            DateTime          @map("applied_at") @db.Timestamptz(3)
+  provenance           Json
+  originalResponses    Json              @map("original_responses")
+  participant          Participant       @relation(fields: [participantId], references: [id], onDelete: Restrict)
+  respondent           Account?          @relation(fields: [respondentId], references: [id], onDelete: Restrict)
+  institution          Institution       @relation(fields: [institutionId], references: [id], onDelete: Restrict)
+  period               AcademicPeriod    @relation(fields: [periodId], references: [id], onDelete: Restrict)
+  instrumentVersion    InstrumentVersion @relation(fields: [instrumentCode, variant, sourceVersion], references: [instrumentCode, variant, sourceVersion], onDelete: Restrict)
+  results              IbiteResult[]
+
+  @@unique([participantId, instrumentCode, periodId])
+  @@unique([assignmentId, idempotencyKeyDigest])
+  @@index([institutionId, periodId])
+  @@index([respondentId])
+  @@map("ibite_applications")
+}
+
+model IbiteResult {
+  id            String           @id @default(uuid()) @db.Uuid
+  applicationId String           @map("application_id") @db.Uuid
+  ruleVersion   String           @map("rule_version")
+  calculatedAt  DateTime         @default(now()) @map("calculated_at") @db.Timestamptz(3)
+  provenance    Json
+  result        Json
+  application   IbiteApplication @relation(fields: [applicationId], references: [id], onDelete: Restrict)
+
+  @@index([applicationId, calculatedAt])
+  @@map("ibite_results")
+}
+
+model AuditEvent {
+  id            String   @id @default(uuid()) @db.Uuid
+  actorId       String   @map("actor_id") @db.Uuid
+  action        String
+  targetId      String   @map("target_id") @db.Uuid
+  institutionId String?  @map("institution_id") @db.Uuid
+  occurredAt    DateTime @default(now()) @map("occurred_at") @db.Timestamptz(3)
+
+  @@index([targetId, occurredAt])
+  @@index([institutionId, occurredAt, id], map: "audit_events_institution_recent_idx")
+  @@map("audit_events")
+}
+
+model IbiteCampaign {
+  id                String            @id @default(uuid()) @db.Uuid
+  institutionId     String            @map("institution_id") @db.Uuid
+  periodId          String            @map("period_id") @db.Uuid
+  instrumentCode    String            @map("instrument_code")
+  variant           String
+  sourceVersion     String            @map("source_version")
+  opensAt           DateTime          @map("opens_at") @db.Timestamptz(3)
+  closesAt          DateTime          @map("closes_at") @db.Timestamptz(3)
+  enabled           Boolean           @default(true)
+  institution       Institution       @relation(fields: [institutionId], references: [id], onDelete: Restrict)
+  period            AcademicPeriod    @relation(fields: [periodId], references: [id], onDelete: Restrict)
+  instrumentVersion InstrumentVersion @relation(fields: [instrumentCode, variant, sourceVersion], references: [instrumentCode, variant, sourceVersion], onDelete: Restrict)
+  assignments       IbiteAssignment[]
+
+  @@index([institutionId, periodId])
+  @@map("ibite_campaigns")
+}
+
+model IbiteAssignment {
+  id            String             @id @default(uuid()) @db.Uuid
+  campaignId    String             @map("campaign_id") @db.Uuid
+  participantId String             @map("participant_id") @db.Uuid
+  respondentId  String             @map("respondent_id") @db.Uuid
+  revokedAt     DateTime?          @map("revoked_at") @db.Timestamptz(3)
+  campaign      IbiteCampaign      @relation(fields: [campaignId], references: [id], onDelete: Restrict)
+  participant   Participant        @relation(fields: [participantId], references: [id], onDelete: Restrict)
+  respondent    Account            @relation(fields: [respondentId], references: [id], onDelete: Restrict)
+  applications  IbiteApplication[]
+  refusal       IbiteParticipationRefusal?
+
+  @@unique([campaignId, participantId, respondentId])
+  @@index([respondentId, revokedAt])
+  @@map("ibite_assignments")
+}
+
+enum IbiteRefusalReason {
+  PARTICIPATION
+  REPRESENTATIVE_AUTHORIZATION
+}
+
+model IbiteParticipationRefusal {
+  assignmentId String          @id @map("assignment_id") @db.Uuid
+  formVersion  String          @map("form_version")
+  reason       IbiteRefusalReason @default(PARTICIPATION)
+  recordedAt   DateTime        @default(now()) @map("recorded_at") @db.Timestamptz(3)
+  assignment   IbiteAssignment @relation(fields: [assignmentId], references: [id], onDelete: Restrict)
+
+  @@map("ibite_participation_refusals")
+}
+
+model HistoricalDiagnostic {
+  id              String             @id @default(uuid()) @db.Uuid
+  sourceSha256    String             @map("source_sha256") @db.Char(64)
+  analysisVersion String             @map("analysis_version")
+  digest          String             @map("digest") @db.Char(64)
+  snapshot        Json
+  createdAt       DateTime           @default(now()) @map("created_at") @db.Timestamptz(3)
+  reviews         HistoricalReview[]
+
+  @@unique([sourceSha256, analysisVersion, digest])
+  @@map("historical_diagnostics")
+}
+
+model HistoricalReview {
+  id           String               @id @default(uuid()) @db.Uuid
+  diagnosticId String               @map("diagnostic_id") @db.Uuid
+  actorId      String               @map("actor_id") @db.Uuid
+  incidentKey  String               @map("incident_key")
+  reviewState  String               @map("review_state")
+  createdAt    DateTime             @default(now()) @map("created_at") @db.Timestamptz(3)
+  diagnostic   HistoricalDiagnostic @relation(fields: [diagnosticId], references: [id], onDelete: Restrict)
+
+  @@index([diagnosticId, createdAt])
+  @@map("historical_reviews")
+}

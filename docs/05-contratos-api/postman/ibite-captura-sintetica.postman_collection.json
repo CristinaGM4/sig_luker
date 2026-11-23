@@ -1,0 +1,172 @@
+{
+  "info": {
+    "name": "SIG-LUKER - captura IBITE sintética",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Usar solo con la aplicación de prueba que registra el formulario sintético y con una sesión de un respondiente sintético."
+  },
+  "item": [
+    {
+      "name": "Consultar formulario de prueba",
+      "request": {
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{sessionToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "url": "{{baseUrl}}/api/v1/mis-aplicaciones-ibite/{{habilitacionId}}/formulario"
+      }
+    },
+    {
+      "name": "Adolescente con autorización incierta y señal de seguridad",
+      "request": {
+        "method": "POST",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{sessionToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "{{idempotencyKey}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"formVersion\": \"ibite-17-adolescente-sintetico/2\",\r\n  \"participation\": \"accepted\",\r\n  \"reportedRepresentativeAuthorization\": \"unknown\",\r\n  \"answers\": [\r\n    {\r\n      \"questionId\": \"q1\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q2\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q3\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q4\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q5\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q6\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q7\",\r\n      \"optionId\": \"one\"\r\n    },\r\n    {\r\n      \"questionId\": \"q8\",\r\n      \"optionId\": \"unclear\"\r\n    },\r\n    {\r\n      \"questionId\": \"q9\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q10\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q11\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q12\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q13\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q14\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q15\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q16\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q17\",\r\n      \"optionId\": \"zero\"\r\n    }\r\n  ]\r\n}"
+        },
+        "url": "{{baseUrl}}/api/v1/mis-aplicaciones-ibite/{{habilitacionId}}/envios"
+      }
+    },
+    {
+      "request": {
+        "url": "{{baseUrl}}/api/v1/mis-aplicaciones-ibite/{{habilitacionId}}/negativa",
+        "method": "POST",
+        "header": [
+          {
+            "value": "application/json",
+            "key": "Content-Type"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"formVersion\":\"ibite-17-adolescente-sintetico/2\",\"reason\":\"REPRESENTATIVE_AUTHORIZATION\"}"
+        },
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{sessionToken}}",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "description": "Usar una habilitación sintética sin aplicación definitiva.",
+      "name": "Registrar negativa del representante en adolescente"
+    },
+    {
+      "request": {
+        "url": "{{baseUrl}}/api/v1/mis-aplicaciones-ibite/{{habilitacionAcudienteId}}/envios",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{sessionToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"formVersion\": \"ibite-17-acudiente-sintetico/2\",\r\n  \"participation\": \"accepted\",\r\n  \"answers\": [\r\n    {\r\n      \"questionId\": \"q1\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q2\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q3\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q4\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q5\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q6\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q7\",\r\n      \"optionId\": \"unclear\"\r\n    },\r\n    {\r\n      \"questionId\": \"q8\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q9\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q10\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q11\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q12\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q13\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q14\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q15\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q16\",\r\n      \"optionId\": \"zero\"\r\n    },\r\n    {\r\n      \"questionId\": \"q17\",\r\n      \"optionId\": \"zero\"\r\n    }\r\n  ]\r\n}"
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "{{idempotencyKey}}"
+          }
+        ]
+      },
+      "name": "Acudiente con seguridad por aclarar"
+    },
+    {
+      "request": {
+        "url": "{{baseUrl}}/api/v1/interno/aplicaciones-ibite/{{applicationId}}/resultados",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "value": "{{psychosocialToken}}",
+              "key": "token",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET"
+      },
+      "name": "Consultar señal con sesión psicosocial"
+    },
+    {
+      "name": "Iniciar sin cuenta con documento sintético (adolescente)",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "url": "{{baseUrl}}/api/v1/ibite/campanas/{{campanaId}}/iniciar",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"age\":11,\"documentNumber\":\"00001001\"}"
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "idempotencyKey",
+      "value": "sintetico-envio-0001"
+    },
+    {
+      "value": "",
+      "key": "habilitacionAcudienteId"
+    },
+    {
+      "value": "",
+      "key": "applicationId"
+    },
+    {
+      "key": "psychosocialToken",
+      "type": "secret",
+      "value": ""
+    }
+  ]
+}

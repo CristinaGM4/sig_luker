@@ -1,0 +1,21 @@
+name: sig-piloto-pago
+
+services:
+  db:
+    image: postgis/postgis:17-3.7@sha256:6bb0c694d6f06201b49d447fd9689ab57f3c7662de621ca35939cc57aafc522b
+    environment:
+      POSTGRES_DB: sig_dev
+      POSTGRES_USER: sig_dev
+      POSTGRES_PASSWORD: ${POSTGRES_DEV_PASSWORD:?Configura POSTGRES_DEV_PASSWORD en .env}
+    ports:
+      - "127.0.0.1:${POSTGRES_DEV_PORT:-55432}:5432"
+    volumes:
+      - postgres-dev:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -h 127.0.0.1 -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  postgres-dev:

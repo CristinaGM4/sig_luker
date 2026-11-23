@@ -1,0 +1,170 @@
+[
+  {
+    "fid": 3026,
+    "dane": "117001000165",
+    "parentDane": "117001000165",
+    "principal": true,
+    "label": "INSTITUCION EDUCATIVA NORMAL SUP DE MANIZALES",
+    "principalInFile": true
+  },
+  {
+    "fid": 3034,
+    "dane": "117001001030",
+    "parentDane": "117001000611",
+    "principal": false,
+    "label": "INSTITUCION EDUCATIVA INSTITUTO LATINOAMERICANO SEDE B",
+    "principalInFile": false
+  },
+  {
+    "fid": 3035,
+    "dane": "117001001323",
+    "parentDane": "117001000611",
+    "principal": false,
+    "label": "INSTITUCION EDUCATIVA INSTITUTO LATINOAMERICANO SEDE A",
+    "principalInFile": false
+  },
+  {
+    "fid": 3040,
+    "dane": "117001005124",
+    "parentDane": "117001001536",
+    "principal": false,
+    "label": "INSTITUCION EDUCATIVA FE Y ALEGRIA LA PAZ SEDE B",
+    "principalInFile": false
+  },
+  {
+    "fid": 3046,
+    "dane": "117001003181",
+    "parentDane": "117001002176",
+    "principal": false,
+    "label": "INSTITUCION EDUCATIVA SAN PIO X SEDE B",
+    "principalInFile": true
+  },
+  {
+    "fid": 3047,
+    "dane": "117001003776",
+    "parentDane": "117001002176",
+    "principal": false,
+    "label": "INSTITUCION EDUCATIVA SAN PIO X SEDE C",
+    "principalInFile": true
+  },
+  {
+    "fid": 3054,
+    "dane": "117001004942",
+    "parentDane": "117001002346",
+    "principal": false,
+    "label": "INSTITUCION EDUCATIVA LA ASUNCION SEDE B",
+    "principalInFile": false
+  },
+  {
+    "fid": 3057,
+    "dane": "117001002711",
+    "parentDane": "117001002711",
+    "principal": true,
+    "label": "INSTITUCION INTEG LA SULTANA",
+    "principalInFile": true
+  },
+  {
+    "fid": 3058,
+    "dane": "117001005701",
+    "parentDane": "117001002711",
+    "principal": false,
+    "label": "INSTITUCION EDUCATIVA LA SULTANA SEDE A",
+    "principalInFile": true
+  },
+  {
+    "fid": 3062,
+    "dane": "117001000947",
+    "parentDane": "117001002737",
+    "principal": false,
+    "label": "INSTITUCION EDUCATIVA LA ASUNCION SEDE A",
+    "principalInFile": true
+  },
+  {
+    "fid": 3063,
+    "dane": "117001002737",
+    "parentDane": "117001002737",
+    "principal": true,
+    "label": "INSTITUCION EDUCATIVA LA ASUNCION",
+    "principalInFile": true
+  },
+  {
+    "fid": 3070,
+    "dane": "117001003890",
+    "parentDane": "117001005256",
+    "principal": false,
+    "label": "INSTITUCION EDUCATIVA LICEO MIXTO SINAI SECCION BASICA PRIMARIA A",
+    "principalInFile": true
+  },
+  {
+    "fid": 3071,
+    "dane": "117001005256",
+    "parentDane": "117001005256",
+    "principal": true,
+    "label": "INSTITUCION EDUCATIVA LICEO MIXTO SINAI",
+    "principalInFile": true
+  },
+  {
+    "fid": 3075,
+    "dane": "117001004993",
+    "parentDane": "117001005981",
+    "principal": false,
+    "label": "INSTITUCION EDUCATIVA FE Y ALEGRIA LA PAZ SEDE A",
+    "principalInFile": true
+  },
+  {
+    "fid": 3076,
+    "dane": "117001005981",
+    "parentDane": "117001005981",
+    "principal": true,
+    "label": "INSTITUCION EDUCATIVA FE Y ALEGRIA LA PAZ",
+    "principalInFile": true
+  },
+  {
+    "fid": 3078,
+    "dane": "117001004357",
+    "parentDane": "117001005990",
+    "principal": false,
+    "label": "INSTITUCION EDUCATIVA LICEO MIXTO SINAI SEDE B",
+    "principalInFile": true
+  },
+  {
+    "fid": 3079,
+    "dane": "117001005990",
+    "parentDane": "117001005990",
+    "principal": true,
+    "label": "INSTITUCION EDUCATIVA BOSQUES DEL NORTE",
+    "principalInFile": true
+  },
+  {
+    "fid": 3084,
+    "dane": "117001006155",
+    "parentDane": "117001006155",
+    "principal": true,
+    "label": "INSTITUCION EDUCATIVA INSTITUTO TECNICO FRANCISCO JOSE DE CALDAS",
+    "principalInFile": true
+  },
+  {
+    "fid": 3085,
+    "dane": "117001006180",
+    "parentDane": "117001006180",
+    "principal": false,
+    "label": "INSTITUCION EDUCATIVA LA SULTANA",
+    "principalInFile": false
+  },
+  {
+    "fid": 47529,
+    "dane": "317001000075",
+    "parentDane": "317001000075",
+    "principal": true,
+    "label": "INSTITUCION EDUCATIVA COLEGIO DE CRISTO",
+    "principalInFile": true
+  },
+  {
+    "fid": 55651,
+    "dane": "117001002176",
+    "parentDane": " ",
+    "principal": true,
+    "label": "INSTITUCION EDUCATIVA SAN PIO X",
+    "principalInFile": false
+  }
+]

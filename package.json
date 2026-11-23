@@ -1,0 +1,51 @@
+{
+  "name": "sig-piloto-pago-backend",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "^22.13.0 || ^24.0.0"
+  },
+  "scripts": {
+    "build": "prisma generate && tsc -p tsconfig.json",
+    "start": "node --env-file-if-exists=.env dist/main.js",
+    "start:ibite-demo": "node --env-file-if-exists=.env scripts/start-ibite-demo.mjs",
+    "plan:ibite-pilot": "node --env-file-if-exists=.env scripts/plan-ibite-pilot.mjs",
+    "preview:sig": "node scripts/preview-sig-layer.mjs",
+    "import:sig:test": "node --env-file-if-exists=.env scripts/import-sig-test-layer.mjs",
+    "preview:field-session": "node scripts/preview-field-session.mjs",
+    "lint": "eslint src test scripts/*.mjs",
+    "format:check": "prettier --check src test scripts/*.mjs eslint.config.mjs package.json tsconfig.json",
+    "test": "npm run build && node --test --test-concurrency=1",
+    "db:validate": "prisma validate",
+    "db:migrate": "prisma migrate deploy",
+    "db:status": "prisma migrate status",
+    "db:generate": "prisma generate",
+    "db:seed": "node --env-file-if-exists=.env dist/database/seed.js"
+  },
+  "dependencies": {
+    "@nestjs/common": "12.6.0",
+    "@nestjs/core": "12.6.0",
+    "@nestjs/platform-express": "12.6.0",
+    "@nestjs/swagger": "12.1.2",
+    "@prisma/adapter-pg": "7.10.1",
+    "@prisma/client": "7.10.1",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/express": "5.0.6",
+    "@types/node": "22.20.5",
+    "eslint": "10.15.0",
+    "prettier": "3.10.1",
+    "prisma": "7.10.1",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.73.0"
+  },
+  "type": "module",
+  "overrides": {
+    "@prisma/config": {
+      "effect": "3.22.5"
+    }
+  }
+}

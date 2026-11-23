@@ -1,0 +1,499 @@
+{
+  "info": {
+    "name": "Monitoreo psicosocial y SIG",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Salud del proceso HTTP",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/health"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('El proceso HTTP está disponible', () => {",
+              "  pm.response.to.have.status(200);",
+              "  pm.expect(pm.response.json()).to.eql({status: 'ok'});",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "request": {
+        "description": "Requiere PostgreSQL y un token de sesión de prueba válido. El API aún no emite tokens.",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "value": "{{sessionToken}}",
+              "type": "string",
+              "key": "token"
+            }
+          ]
+        },
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/auth/me"
+      },
+      "name": "Identidad de sesión"
+    },
+    {
+      "request": {
+        "description": "Revoca la sesión representada por el token de prueba.",
+        "auth": {
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{sessionToken}}",
+              "type": "string"
+            }
+          ],
+          "type": "bearer"
+        },
+        "url": "{{baseUrl}}/api/v1/auth/session",
+        "method": "DELETE"
+      },
+      "name": "Cerrar sesión actual"
+    },
+    {
+      "name": "Consultar instituciones",
+      "request": {
+        "auth": {
+          "bearer": [
+            {
+              "value": "{{sessionToken}}",
+              "key": "token",
+              "type": "string"
+            }
+          ],
+          "type": "bearer"
+        },
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/interno/catalogos/instituciones?limit=25",
+        "description": "Requiere PostgreSQL y una sesión con records:read."
+      }
+    },
+    {
+      "name": "Consultar periodos",
+      "request": {
+        "auth": {
+          "bearer": [
+            {
+              "value": "{{sessionToken}}",
+              "key": "token",
+              "type": "string"
+            }
+          ],
+          "type": "bearer"
+        },
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/interno/catalogos/periodos?limit=25",
+        "description": "Requiere PostgreSQL y una sesión con records:read."
+      }
+    },
+    {
+      "name": "Disponibilidad de PostgreSQL",
+      "request": {
+        "url": "{{baseUrl}}/api/v1/ready",
+        "method": "GET",
+        "description": "Ruta técnica disponible con DATABASE_URL configurada. Devuelve 200 o 503 sin detalles de conexión."
+      }
+    },
+    {
+      "request": {
+        "url": "{{baseUrl}}/api/v1/interno/aplicaciones-ibite/{{aplicacionId}}/resultados",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{sessionToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "description": "Requiere sesión psicosocial, permiso de lectura y asignación a la institución de la aplicación sintética.",
+        "method": "GET"
+      },
+      "name": "Resultados IBITE internos"
+    },
+    {
+      "name": "PUT asignación psicosocial",
+      "request": {
+        "auth": {
+          "bearer": [
+            {
+              "value": "{{sessionToken}}",
+              "key": "token",
+              "type": "string"
+            }
+          ],
+          "type": "bearer"
+        },
+        "method": "PUT",
+        "url": "{{baseUrl}}/api/v1/interno/asignaciones-psicosociales/{{profesionalId}}/{{institucionId}}"
+      }
+    },
+    {
+      "name": "DELETE asignación psicosocial",
+      "request": {
+        "auth": {
+          "bearer": [
+            {
+              "value": "{{sessionToken}}",
+              "key": "token",
+              "type": "string"
+            }
+          ],
+          "type": "bearer"
+        },
+        "method": "DELETE",
+        "url": "{{baseUrl}}/api/v1/interno/asignaciones-psicosociales/{{profesionalId}}/{{institucionId}}"
+      }
+    },
+    {
+      "request": {
+        "url": "{{baseUrl}}/api/v1/mis-aplicaciones-ibite",
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "value": "{{sessionToken}}",
+              "key": "token",
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "name": "Mis aplicaciones IBITE"
+    },
+    {
+      "name": "Auditoría institucional",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/interno/instituciones/{{institucionId}}/auditoria",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "type": "string",
+              "value": "{{sessionToken}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "auth": {
+          "bearer": [
+            {
+              "value": "{{sessionToken}}",
+              "key": "token",
+              "type": "string"
+            }
+          ],
+          "type": "bearer"
+        },
+        "url": "{{baseUrl}}/api/v1/interno/asignaciones-psicosociales/instituciones/{{institucionId}}"
+      },
+      "name": "Listar asignaciones psicosociales de una institución"
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/mis-aplicaciones-ibite/{{habilitacionId}}",
+        "auth": {
+          "bearer": [
+            {
+              "type": "string",
+              "key": "token",
+              "value": "{{sessionToken}}"
+            }
+          ],
+          "type": "bearer"
+        }
+      },
+      "name": "Detalle de mi habilitación"
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/mis-aplicaciones-ibite/{{habilitacionId}}/acuse",
+        "auth": {
+          "bearer": [
+            {
+              "type": "string",
+              "key": "token",
+              "value": "{{sessionToken}}"
+            }
+          ],
+          "type": "bearer"
+        }
+      },
+      "name": "Acuse de mi habilitación"
+    },
+    {
+      "request": {
+        "url": "{{baseUrl}}/api/v1/interno/campanas-ibite/{{campanaId}}/estado",
+        "method": "PUT",
+        "body": {
+          "mode": "raw",
+          "raw": "{\"enabled\":false}"
+        },
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "type": "string",
+              "key": "token",
+              "value": "{{sessionToken}}"
+            }
+          ]
+        },
+        "header": [
+          {
+            "value": "application/json",
+            "key": "Content-Type"
+          }
+        ]
+      },
+      "name": "Activar o desactivar campaña IBITE-17"
+    },
+    {
+      "name": "Iniciar IBITE-17 adolescente en campaña abierta",
+      "request": {
+        "auth": {
+          "bearer": [
+            {
+              "type": "string",
+              "value": "{{sessionToken}}",
+              "key": "token"
+            }
+          ],
+          "type": "bearer"
+        },
+        "url": "{{baseUrl}}/api/v1/mis-aplicaciones-ibite/campanas/{{campanaId}}/iniciar",
+        "method": "POST"
+      }
+    },
+    {
+      "name": "Consultar MTTS Formato A",
+      "request": {
+        "auth": {
+          "bearer": [
+            {
+              "type": "string",
+              "value": "{{sessionToken}}",
+              "key": "token"
+            }
+          ],
+          "type": "bearer"
+        },
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/interno/instituciones/{{institucionId}}/mtts/formato-a"
+      }
+    },
+    {
+      "name": "Registrar ficha semanal MTTS",
+      "request": {
+        "body": {
+          "raw": "{\"version\":\"mtts-formato-a/1\",\"site\":\"Sede QA\",\"weekStart\":\"2026-11-23\",\"weekEnd\":\"2026-11-29\",\"role\":\"Coordinación\",\"activities\":[],\"countsUnavailable\":true,\"ratings\":{\"factibilidad\":\"NA\"},\"barriers\":[],\"facilitators\":[],\"adjustment\":\"No\",\"status\":\"En curso según lo previsto\",\"escalation\":false}",
+          "mode": "raw"
+        },
+        "header": [
+          {
+            "value": "application/json",
+            "key": "Content-Type"
+          }
+        ],
+        "auth": {
+          "bearer": [
+            {
+              "type": "string",
+              "value": "{{sessionToken}}",
+              "key": "token"
+            }
+          ],
+          "type": "bearer"
+        },
+        "method": "POST",
+        "url": "{{baseUrl}}/api/v1/interno/instituciones/{{institucionId}}/mtts/fichas"
+      }
+    },
+    {
+      "name": "Consultar ficha semanal MTTS",
+      "request": {
+        "auth": {
+          "bearer": [
+            {
+              "type": "string",
+              "value": "{{sessionToken}}",
+              "key": "token"
+            }
+          ],
+          "type": "bearer"
+        },
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/interno/instituciones/{{institucionId}}/mtts/fichas/{{fichaId}}"
+      }
+    },
+    {
+      "request": {
+        "auth": {
+          "bearer": [
+            {
+              "value": "{{sessionToken}}",
+              "key": "token",
+              "type": "string"
+            }
+          ],
+          "type": "bearer"
+        },
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/interno/instituciones/{{institucionId}}/mtts/fichas?desde=2026-11-23&hasta=2026-12-06"
+      },
+      "name": "Listar fichas semanales MTTS"
+    },
+    {
+      "request": {
+        "auth": {
+          "bearer": [
+            {
+              "value": "{{sessionToken}}",
+              "key": "token",
+              "type": "string"
+            }
+          ],
+          "type": "bearer"
+        },
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/interno/instituciones/{{institucionId}}/mtts/resumen?desde=2026-11-23&hasta=2026-12-06&porSemana=true"
+      },
+      "name": "Consultar resumen descriptivo MTTS"
+    },
+    {
+      "name": "Consultar evidencia del formulario de Factibilidad",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{sessionToken}}",
+              "type": "string"
+            }
+          ]
+        },
+        "url": "{{baseUrl}}/api/v1/interno/instituciones/{{institucionId}}/factibilidad/formulario",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Registrar evaluación de Factibilidad",
+      "request": {
+        "auth": {
+          "bearer": [
+            {
+              "value": "{{sessionToken}}",
+              "type": "string",
+              "key": "token"
+            }
+          ],
+          "type": "bearer"
+        },
+        "url": "{{baseUrl}}/api/v1/interno/instituciones/{{institucionId}}/factibilidad/evaluaciones",
+        "method": "POST",
+        "body": {
+          "raw": "{\"version\":\"jugar-para-cuidar/1\",\"workshopDate\":\"2026-11-21\",\"place\":\"Salón de prueba\",\"attendance\":\"8\",\"facilitator\":\"Facilitador sintético\",\"improvements\":\"Preparar otro juego\",\"workshopDelivery\":[\"Sí\",\"Sí\",\"Sí\",\"Sí\",\"Sí\",\"Sí\",\"Sí\"],\"process\":[\"Alto\",\"Aceptable\",\"Muy alto\"]}",
+          "mode": "raw"
+        },
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "{{idempotencyKey}}",
+            "disabled": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "Consultar evaluación de Factibilidad",
+      "request": {
+        "auth": {
+          "bearer": [
+            {
+              "value": "{{sessionToken}}",
+              "type": "string",
+              "key": "token"
+            }
+          ],
+          "type": "bearer"
+        },
+        "url": "{{baseUrl}}/api/v1/interno/instituciones/{{institucionId}}/factibilidad/evaluaciones/{{evaluacionId}}",
+        "method": "GET"
+      }
+    },
+    {
+      "name": "Listar evaluaciones de Factibilidad",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/interno/instituciones/{{institucionId}}/factibilidad/evaluaciones?desde=2026-11-01&hasta=2026-11-30",
+        "auth": {
+          "bearer": [
+            {
+              "value": "{{sessionToken}}",
+              "type": "string",
+              "key": "token"
+            }
+          ],
+          "type": "bearer"
+        }
+      }
+    },
+    {
+      "name": "Consultar puntos SIG en una caja espacial",
+      "request": {
+        "url": "{{baseUrl}}/api/v1/interno/instituciones/{{institucionId}}/sig/puntos?bbox=-76,5,-75,6",
+        "method": "GET",
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "type": "string",
+              "value": "{{sessionToken}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Listar capas SIG públicas",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/publico/sig/capas"
+      }
+    },
+    {
+      "name": "Consultar microzonificación de 2002",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/publico/sig/microzonificacion?bbox=-76,5,-75,6"
+      }
+    }
+  ]
+}

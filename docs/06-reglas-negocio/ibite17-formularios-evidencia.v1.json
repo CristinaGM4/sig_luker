@@ -1,0 +1,388 @@
+{
+  "instrumentCode": "IBITE-17",
+  "status": "reference-reviewed",
+  "sourceVersion": "manizales-respuestas-23",
+  "workbook": {
+    "name": "IBITE Manizales (respuestas)-23.xlsx",
+    "sha256": "9d7b11c584f21741b1abe9edab746eefa41458923bc43dc0b26a07f74c33780e",
+    "sheet": "Respuestas de formulario 1"
+  },
+  "screenshots": {
+    "name": "IBITE CONTESTADO POR PADRE.docx",
+    "sha256": "9f8d2e0b4de6bfc3932f291508e2db83f7d7f8adce272b4c7dace2f40608b00f"
+  },
+  "respondentSelector": {
+    "column": "B",
+    "header": "Para continuar, indíquenos quién va a responder las preguntas de aquí en adelante:"
+  },
+  "variants": [
+    {
+      "variant": "CAREGIVER",
+      "evidenceVersion": "ibite-17-acudiente-evidencia/1",
+      "consent": [
+        {
+          "column": "C",
+          "header": "¿Acepta participar y autoriza el uso de la información para estos fines?"
+        }
+      ],
+      "demographics": [
+        {
+          "column": "D",
+          "header": "Teléfono de contacto"
+        },
+        {
+          "column": "E",
+          "header": "Nombre completo del niño, niña o adolescente"
+        },
+        {
+          "column": "F",
+          "header": "Edad del niño, niña o adolescente"
+        },
+        {
+          "column": "G",
+          "header": "Sexo registrado al nacer"
+        },
+        {
+          "column": "H",
+          "header": "Institución educativa"
+        },
+        {
+          "column": "I",
+          "header": "Grado que cursa actualmente"
+        },
+        {
+          "column": "J",
+          "header": "Comuna o corregimiento donde vive"
+        },
+        {
+          "column": "K",
+          "header": "¿Con quién vive actualmente  el niño, niña o adolescente?"
+        },
+        {
+          "column": "L",
+          "header": "Persona que responde este formulario"
+        }
+      ],
+      "eventContext": [
+        {
+          "column": "M",
+          "header": "Durante el temblor o después de este, ¿el niño, niña o adolescente sufrió alguna lesión física?"
+        },
+        {
+          "column": "N",
+          "header": "Si presentó alguna lesión, ¿qué tipo de afectación tuvo?"
+        },
+        {
+          "column": "O",
+          "header": "¿Alguna persona con la que vive resultó herida físicamente por el temblor?"
+        },
+        {
+          "column": "P",
+          "header": "Como consecuencia del temblor, ¿la familia tuvo que salir temporalmente de su vivienda?"
+        },
+        {
+          "column": "Q",
+          "header": "¿La vivienda donde vive el niño, niña o adolescente presentó daños?"
+        },
+        {
+          "column": "R",
+          "header": "Después del temblor, ¿el hogar ha tenido dificultades con alguno de estos servicios o necesidades?"
+        },
+        {
+          "column": "S",
+          "header": "¿El niño, niña o adolescente ha tenido que cambiar temporalmente de lugar de residencia, escuela o cuidador debido al temblor?"
+        }
+      ],
+      "scoredItems": [
+        {
+          "id": "item-01",
+          "column": "T",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Ha tenido pensamientos, recuerdos o imágenes del temblor que llegan sin querer o lo/la alteran]",
+          "scoringColumn": "R"
+        },
+        {
+          "id": "item-02",
+          "column": "U",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Ha tenido pesadillas o dificultad para dormir relacionadas con el temblor o las réplicas.]",
+          "scoringColumn": "S"
+        },
+        {
+          "id": "item-03",
+          "column": "V",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Evita hablar del temblor, ver videos o noticias del sismo, o estar en lugares que se lo recuerdan.]",
+          "scoringColumn": "T"
+        },
+        {
+          "id": "item-04",
+          "column": "W",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Se sobresalta, está más alerta o nervioso/a de lo habitual ante ruidos fuertes, vibraciones o movimientos desde el temblor.]",
+          "scoringColumn": "U"
+        },
+        {
+          "id": "item-05",
+          "column": "X",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Ha estado triste, irritable, ansioso/a o ha llorado más de lo habitual desde el temblor.]",
+          "scoringColumn": "V"
+        },
+        {
+          "id": "item-06",
+          "column": "Y",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Estas dificultades le han afectado para asistir, aprender, jugar o relacionarse con otras personas desde que se reanudaron las actividades.]",
+          "scoringColumn": "W"
+        },
+        {
+          "id": "item-07",
+          "column": "Z",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Ha dicho o comunicado que quisiera morir, desaparecer, no despertar o dejar de existir.]",
+          "scoringColumn": "X"
+        },
+        {
+          "id": "item-08",
+          "column": "AA",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Se ha lastimado a propósito, ha intentado hacerse daño o ha tenido una conducta que hizo pensar que su vida podía estar en peligro.]",
+          "scoringColumn": "Y"
+        },
+        {
+          "id": "item-09",
+          "column": "AB",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Desde que se reanudaron las actividades, ha mostrado miedo o rechazo a entrar o permanecer en el salón o la institución.]",
+          "scoringColumn": "Z"
+        },
+        {
+          "id": "item-10",
+          "column": "AC",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Le ha costado concentrarse, seguir instrucciones o rendir en las actividades escolares desde el regreso.]",
+          "scoringColumn": "AA"
+        },
+        {
+          "id": "item-11",
+          "column": "AD",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Ha faltado, ha pedido no ir, o ha mostrado resistencia a asistir desde que se reanudaron las actividades.]",
+          "scoringColumn": "AB"
+        },
+        {
+          "id": "item-12",
+          "column": "AE",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Cuando se siente asustado/a, nervioso/a o alterado/a por lo ocurrido, puede recuperar la calma por sí mismo/a o con ayuda de alguien 0 = Nada; 1 = Poco; 2 = Bastante; 3 = Mucho.]",
+          "scoringColumn": "AC"
+        },
+        {
+          "id": "item-13",
+          "column": "AF",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Disfruta de actividades, juego, amigos o cosas que normalmente le gustan, a pesar de lo ocurrido.]",
+          "scoringColumn": "AD"
+        },
+        {
+          "id": "item-14",
+          "column": "AG",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Cuando necesita ayuda, logra pedirla o aceptar el apoyo de una persona de confianza. 0 = Nada; 1 = Poco; 2 = Bastante; 3 = Mucho]",
+          "scoringColumn": "AE"
+        },
+        {
+          "id": "item-15",
+          "column": "AH",
+          "header": "Desde el temblor, el niño, niña o adolescente... [En casa, los adultos han logrado mantener calma, rutinas y explicaciones claras sobre el temblor y las réplicas.]",
+          "scoringColumn": "AF"
+        },
+        {
+          "id": "item-16",
+          "column": "AI",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Los adultos de la casa se han sentido tan sobrecargados, angustiados o afectados por el temblor que les cuesta responder con calma a las necesidades del niño, niña o adolescente.]",
+          "scoringColumn": "AG"
+        },
+        {
+          "id": "item-17",
+          "column": "AJ",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Cuenta con al menos un adulto o red de apoyo disponible para acompañarlo/a desde el temblor.]",
+          "scoringColumn": "AH"
+        }
+      ]
+    },
+    {
+      "variant": "ADOLESCENT",
+      "evidenceVersion": "ibite-17-adolescente-evidencia/1",
+      "consent": [
+        {
+          "column": "AK",
+          "header": "¿Quieres participar?"
+        },
+        {
+          "column": "AL",
+          "header": "¿Tu papá, mamá o acudiente ya fue informado y autorizó que participes en este ejercicio del colegio y la Secretaría de Salud?"
+        }
+      ],
+      "demographics": [
+        {
+          "column": "AM",
+          "header": "Teléfono de contacto 2"
+        },
+        {
+          "column": "AN",
+          "header": "¿Cuál es tu nombre completo?"
+        },
+        {
+          "column": "AO",
+          "header": "¿Cuál es tu edad?"
+        },
+        {
+          "column": "AP",
+          "header": "Tu sexo registrado al nacer es"
+        },
+        {
+          "column": "AQ",
+          "header": "Tu institución educativa es"
+        },
+        {
+          "column": "AR",
+          "header": "El grado que cursas actualmente es"
+        },
+        {
+          "column": "AS",
+          "header": "Comuna o corregimiento donde vives"
+        },
+        {
+          "column": "AT",
+          "header": "¿Con quién vives actualmente?"
+        },
+        {
+          "column": "AU",
+          "header": "¿Hay una persona adulta acompañándote mientras respondes?"
+        }
+      ],
+      "eventContext": [
+        {
+          "column": "AV",
+          "header": "Durante el temblor o después de este, ¿tú sufriste alguna lesión física?"
+        },
+        {
+          "column": "AW",
+          "header": "Si tuviste alguna lesión, ¿qué tipo de afectación tuviste?"
+        },
+        {
+          "column": "AX",
+          "header": "¿Alguna persona con la que vives resultó herida físicamente por el temblor?"
+        },
+        {
+          "column": "AY",
+          "header": "Como consecuencia del temblor, ¿tu familia tuvo que salir temporalmente de la vivienda?"
+        },
+        {
+          "column": "AZ",
+          "header": "¿La vivienda donde vives presentó daños?"
+        },
+        {
+          "column": "BA",
+          "header": "Después del temblor, ¿tu hogar ha tenido dificultades con alguno de estos servicios o necesidades?"
+        },
+        {
+          "column": "BB",
+          "header": "¿Has tenido que cambiar temporalmente de lugar de residencia, escuela o cuidador debido al temblor?"
+        }
+      ],
+      "scoredItems": [
+        {
+          "id": "item-01",
+          "column": "BC",
+          "header": "Desde el temblor... [Me han venido pensamientos, recuerdos o imágenes de lo que pasó, aunque no quiera pensar en eso.]",
+          "scoringColumn": "R"
+        },
+        {
+          "id": "item-02",
+          "column": "BD",
+          "header": "Desde el temblor... [He tenido pesadillas o me ha costado dormir por cosas relacionadas con el temblor o las réplicas.]",
+          "scoringColumn": "S"
+        },
+        {
+          "id": "item-03",
+          "column": "BE",
+          "header": "Desde el temblor... [Evito hablar del temblor, ver videos o noticias del sismo, o estar en lugares que me lo recuerdan.]",
+          "scoringColumn": "T"
+        },
+        {
+          "id": "item-04",
+          "column": "BF",
+          "header": "Desde el temblor... [Me sobresalto, estoy más alerta o nervioso/a de lo normal con ruidos fuertes, vibraciones o movimientos desde el temblor.]",
+          "scoringColumn": "U"
+        },
+        {
+          "id": "item-05",
+          "column": "BG",
+          "header": "Desde el temblor... [He estado triste, irritable, ansioso/a o he llorado más de lo habitual desde el temblor.]",
+          "scoringColumn": "V"
+        },
+        {
+          "id": "item-06",
+          "column": "BH",
+          "header": "Desde el temblor... [Estas dificultades me han afectado para estudiar, aprender, jugar o llevarme bien con otras personas desde que volvimos a clases.]",
+          "scoringColumn": "W"
+        },
+        {
+          "id": "item-07",
+          "column": "BI",
+          "header": "Desde el temblor... [He dicho o sentido que quisiera morir, desaparecer, no despertar o dejar de existir.]",
+          "scoringColumn": "X"
+        },
+        {
+          "id": "item-08",
+          "column": "BJ",
+          "header": "Desde el temblor... [Me he lastimado a propósito, he intentado hacerme daño o he hecho algo que puso en peligro mi vida.]",
+          "scoringColumn": "Y"
+        },
+        {
+          "id": "item-09",
+          "column": "BK",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Desde que volvimos a clases, he sentido miedo o rechazo a entrar o quedarme en el salón o el colegio.]",
+          "scoringColumn": "Z"
+        },
+        {
+          "id": "item-10",
+          "column": "BL",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Me ha costado concentrarme, seguir la clase o rendir en las actividades escolares desde que volvimos.]",
+          "scoringColumn": "AA"
+        },
+        {
+          "id": "item-11",
+          "column": "BM",
+          "header": "Desde el temblor, el niño, niña o adolescente... [He faltado, he pedido no ir, o me ha costado querer ir al colegio desde que se reanudaron las clases.]",
+          "scoringColumn": "AB"
+        },
+        {
+          "id": "item-12",
+          "column": "BN",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Cuando siento el temblor, una réplica o recuerdo lo que pasó, logro calmarme con el apoyo apropiado para mi edad.]",
+          "scoringColumn": "AC"
+        },
+        {
+          "id": "item-13",
+          "column": "BO",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Disfruto de actividades, juego, amigos o cosas que normalmente me gustan, a pesar de lo que pasó.]",
+          "scoringColumn": "AD"
+        },
+        {
+          "id": "item-14",
+          "column": "BP",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Busco o acepto ayuda o consuelo de una persona adulta de confianza cuando el temblor o el regreso a clases me preocupa.]",
+          "scoringColumn": "AE"
+        },
+        {
+          "id": "item-15",
+          "column": "BQ",
+          "header": "Desde el temblor, el niño, niña o adolescente... [En mi casa, los adultos han logrado mantener la calma, las rutinas y explicarme lo que pasó con el temblor.]",
+          "scoringColumn": "AF"
+        },
+        {
+          "id": "item-16",
+          "column": "BR",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Los adultos de mi casa han estado tan afectados, angustiados o desbordados por el temblor que no han podido acompañarme como necesito.]",
+          "scoringColumn": "AG"
+        },
+        {
+          "id": "item-17",
+          "column": "BS",
+          "header": "Desde el temblor, el niño, niña o adolescente... [Cuento con al menos un adulto o persona de apoyo disponible para acompañarme desde el temblor.]",
+          "scoringColumn": "AH"
+        }
+      ]
+    }
+  ]
+}

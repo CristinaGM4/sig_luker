@@ -1,0 +1,565 @@
+{
+  "version": "matriz-la-merced-evidencia/1",
+  "status": "reference-reviewed",
+  "source": {
+    "filename": "Matriz Piloto.xlsx",
+    "sha256": "2dcdb48682bd710c4413c12b454fd881e3506f7a793f2bc54c2c1c801d5237ce",
+    "sheet": "Matriz piloto",
+    "headerRows": [
+      1,
+      2
+    ]
+  },
+  "blocks": [
+    {
+      "id": "basic",
+      "startColumn": "A",
+      "endColumn": "O",
+      "fields": [
+        {
+          "column": "A",
+          "row1": "DATOS BÁSICOS",
+          "row2": "Nombre completo"
+        },
+        {
+          "column": "B",
+          "row1": null,
+          "row2": "Documento"
+        },
+        {
+          "column": "C",
+          "row1": null,
+          "row2": "Contacto"
+        },
+        {
+          "column": "D",
+          "row1": null,
+          "row2": "Edad"
+        },
+        {
+          "column": "E",
+          "row1": null,
+          "row2": "Grado"
+        },
+        {
+          "column": "F",
+          "row1": null,
+          "row2": "Malestar postevento"
+        },
+        {
+          "column": "G",
+          "row1": null,
+          "row2": "Reintegración escolar"
+        },
+        {
+          "column": "H",
+          "row1": null,
+          "row2": "Recursos psicosociales"
+        },
+        {
+          "column": "I",
+          "row1": null,
+          "row2": "Ideación"
+        },
+        {
+          "column": "J",
+          "row1": null,
+          "row2": "Autolesión"
+        },
+        {
+          "column": "K",
+          "row1": null,
+          "row2": "Sobrecarga familiar"
+        },
+        {
+          "column": "L",
+          "row1": null,
+          "row2": "Malestar combinado (Í1–6; 0–18)"
+        },
+        {
+          "column": "M",
+          "row1": null,
+          "row2": "Necesidades detectadas o prioridades"
+        },
+        {
+          "column": "N",
+          "row1": null,
+          "row2": "Casos particulares identificados por la institución"
+        },
+        {
+          "column": "O",
+          "row1": null,
+          "row2": "Aspecto a trabajar"
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "startColumn": "P",
+      "endColumn": "AA",
+      "fields": [
+        {
+          "column": "P",
+          "row1": "DATOS GENERALES",
+          "row2": "Sexo"
+        },
+        {
+          "column": "Q",
+          "row1": null,
+          "row2": "Edad"
+        },
+        {
+          "column": "R",
+          "row1": null,
+          "row2": "Procedencia"
+        },
+        {
+          "column": "S",
+          "row1": null,
+          "row2": "Antecedentes perinatales"
+        },
+        {
+          "column": "T",
+          "row1": null,
+          "row2": "Vida Interpersonal del Lactante"
+        },
+        {
+          "column": "U",
+          "row1": null,
+          "row2": "Acompañamiento y entorno"
+        },
+        {
+          "column": "V",
+          "row1": null,
+          "row2": "Antecedentes"
+        },
+        {
+          "column": "W",
+          "row1": null,
+          "row2": "Estilo de vida y hábitos"
+        },
+        {
+          "column": "X",
+          "row1": null,
+          "row2": "Peso"
+        },
+        {
+          "column": "Y",
+          "row1": null,
+          "row2": "Talla"
+        },
+        {
+          "column": "Z",
+          "row1": null,
+          "row2": "Clasificación antropométrica"
+        },
+        {
+          "column": "AA",
+          "row1": null,
+          "row2": "Hallazgos positivos al examen físico"
+        }
+      ]
+    },
+    {
+      "id": "medicine",
+      "startColumn": "AB",
+      "endColumn": "AG",
+      "fields": [
+        {
+          "column": "AB",
+          "row1": "MEDICINA",
+          "row2": "Escala abreviada del desarrollo"
+        },
+        {
+          "column": "AC",
+          "row1": null,
+          "row2": "Recomendaciones nutricionales"
+        },
+        {
+          "column": "AD",
+          "row1": null,
+          "row2": "Recomendaciones en actividad física"
+        },
+        {
+          "column": "AE",
+          "row1": null,
+          "row2": "Tratamiento específico"
+        },
+        {
+          "column": "AF",
+          "row1": null,
+          "row2": "Puericultura basada en etapa de vida"
+        },
+        {
+          "column": "AG",
+          "row1": null,
+          "row2": "Aspecto a trabajar"
+        }
+      ]
+    },
+    {
+      "id": "psychiatry",
+      "startColumn": "AH",
+      "endColumn": "AT",
+      "fields": [
+        {
+          "column": "AH",
+          "row1": "PSIQUIATRÍA",
+          "row2": "Cambios intensos del estado de ánimo"
+        },
+        {
+          "column": "AI",
+          "row1": null,
+          "row2": "Ansiedad intensa o crisis recurrentes"
+        },
+        {
+          "column": "AJ",
+          "row1": null,
+          "row2": "Atención, impulsividad o regulación conductual"
+        },
+        {
+          "column": "AK",
+          "row1": null,
+          "row2": "Experiencias perceptivas o pensamiento desorganizado"
+        },
+        {
+          "column": "AL",
+          "row1": null,
+          "row2": "Uso problemático de sustancias (definir las escalas necesarias aplicar)"
+        },
+        {
+          "column": "AM",
+          "row1": null,
+          "row2": "Posibles efectos adversos o dudas sobre medicación"
+        },
+        {
+          "column": "AN",
+          "row1": null,
+          "row2": "Aprendizaje"
+        },
+        {
+          "column": "AO",
+          "row1": null,
+          "row2": "Antecedentes familiares"
+        },
+        {
+          "column": "AP",
+          "row1": null,
+          "row2": "Pautas de crianza"
+        },
+        {
+          "column": "AQ",
+          "row1": null,
+          "row2": "Maltrato"
+        },
+        {
+          "column": "AR",
+          "row1": null,
+          "row2": "Uso de pantallas"
+        },
+        {
+          "column": "AS",
+          "row1": null,
+          "row2": "Psicoeducación"
+        },
+        {
+          "column": "AT",
+          "row1": null,
+          "row2": "Aspecto a trabajar"
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "startColumn": "AU",
+      "endColumn": "BI",
+      "fields": [
+        {
+          "column": "AU",
+          "row1": "DESARROLLO FAMILIAR",
+          "row2": "Apgar"
+        },
+        {
+          "column": "AV",
+          "row1": null,
+          "row2": "Redes primarias de apoyo"
+        },
+        {
+          "column": "AW",
+          "row1": null,
+          "row2": "Involucramiento parental (control-monitoreo-afecto)"
+        },
+        {
+          "column": "AX",
+          "row1": null,
+          "row2": "Ajuste escolar"
+        },
+        {
+          "column": "AY",
+          "row1": null,
+          "row2": "Habilidades de comunicación"
+        },
+        {
+          "column": "AZ",
+          "row1": null,
+          "row2": "Participación en toma de decisiones"
+        },
+        {
+          "column": "BA",
+          "row1": null,
+          "row2": "Participación en colegio"
+        },
+        {
+          "column": "BB",
+          "row1": null,
+          "row2": "Participación en comunidad"
+        },
+        {
+          "column": "BC",
+          "row1": null,
+          "row2": "Solución de conflictos"
+        },
+        {
+          "column": "BD",
+          "row1": null,
+          "row2": "Pérdidas o duelos"
+        },
+        {
+          "column": "BE",
+          "row1": null,
+          "row2": "Rutinas familiares"
+        },
+        {
+          "column": "BF",
+          "row1": null,
+          "row2": "Nivel de escolaridad de los padres"
+        },
+        {
+          "column": "BG",
+          "row1": null,
+          "row2": "Acceso a rutas o programas sociales"
+        },
+        {
+          "column": "BH",
+          "row1": null,
+          "row2": "SABER Y ACTUAR"
+        },
+        {
+          "column": "BI",
+          "row1": null,
+          "row2": "Aspecto a trabajar"
+        }
+      ]
+    },
+    {
+      "id": "psychology",
+      "startColumn": "BJ",
+      "endColumn": "BT",
+      "fields": [
+        {
+          "column": "BJ",
+          "row1": "PSICOLOGÍA",
+          "row2": "Resiliencia"
+        },
+        {
+          "column": "BK",
+          "row1": null,
+          "row2": "Proyecto de vida"
+        },
+        {
+          "column": "BL",
+          "row1": null,
+          "row2": "Acoso escolar"
+        },
+        {
+          "column": "BM",
+          "row1": null,
+          "row2": "Pertenencia"
+        },
+        {
+          "column": "BN",
+          "row1": null,
+          "row2": "regulación emocional"
+        },
+        {
+          "column": "BO",
+          "row1": null,
+          "row2": "Autoestima"
+        },
+        {
+          "column": "BP",
+          "row1": null,
+          "row2": "Lugares seguros"
+        },
+        {
+          "column": "BQ",
+          "row1": null,
+          "row2": "Habilidades sociales"
+        },
+        {
+          "column": "BR",
+          "row1": null,
+          "row2": "Motivación"
+        },
+        {
+          "column": "BS",
+          "row1": null,
+          "row2": "Relaciones familiares"
+        },
+        {
+          "column": "BT",
+          "row1": null,
+          "row2": "Estrategias de intervención"
+        }
+      ]
+    },
+    {
+      "id": "prehospital",
+      "startColumn": "BU",
+      "endColumn": "CI",
+      "fields": [
+        {
+          "column": "BU",
+          "row1": "ATENCIÓN PREHOSPITALARIA",
+          "row2": "¿Cuentas con al menos tres comidas al día?"
+        },
+        {
+          "column": "BV",
+          "row1": null,
+          "row2": "¿Tienes acceso regular a alimentos variados y nutritivos?"
+        },
+        {
+          "column": "BW",
+          "row1": null,
+          "row2": "¿Dispones de agua potable limpia y segura para consumo diario?"
+        },
+        {
+          "column": "BX",
+          "row1": null,
+          "row2": "¿Cuentas con un techo seguro que te proteja del clima (lluvia, frío/calor extremo)?"
+        },
+        {
+          "column": "BY",
+          "row1": null,
+          "row2": "¿Dispones de un lugar propio y adecuado para dormir y descansar?"
+        },
+        {
+          "column": "BZ",
+          "row1": null,
+          "row2": "¿Tu vivienda cuenta con servicios básicos (electricidad, agua corriente, saneamiento/baño)?"
+        },
+        {
+          "column": "CA",
+          "row1": null,
+          "row2": "¿Tienes acceso a atención médica cuando te enfermas o lo necesitas?"
+        },
+        {
+          "column": "CB",
+          "row1": null,
+          "row2": "¿Cuentas con los medicamentos necesarios en caso de algún tratamiento?"
+        },
+        {
+          "column": "CC",
+          "row1": null,
+          "row2": "¿Dispones de artículos básicos de higiene personal (jabón, crema dental, etc.)?"
+        },
+        {
+          "column": "CD",
+          "row1": null,
+          "row2": "¿Tienes ropa limpia y adecuada para las condiciones del clima?"
+        },
+        {
+          "column": "CE",
+          "row1": null,
+          "row2": "¿Te sientes seguro/a en el lugar donde vives actualmente?"
+        },
+        {
+          "column": "CF",
+          "row1": null,
+          "row2": "¿Cuentas con ingresos estables o medios para cubrir tus gastos diarios?"
+        },
+        {
+          "column": "CG",
+          "row1": null,
+          "row2": "¿Estás libre de situaciones directas de violencia o amenaza a tu integridad?"
+        },
+        {
+          "column": "CH",
+          "row1": null,
+          "row2": "¿Tienes redes de apoyo (familiares, amigos o comunidad) a las cuales acudir en caso de emergencia?"
+        },
+        {
+          "column": "CI",
+          "row1": null,
+          "row2": "¿Cuentas con tiempo y espacio para el descanso y el esparcimiento?"
+        }
+      ]
+    },
+    {
+      "id": "suggestions",
+      "startColumn": "CJ",
+      "endColumn": "CN",
+      "fields": [
+        {
+          "column": "CJ",
+          "row1": "Psicología: intervención sugerida",
+          "row2": "Recomendación preliminar"
+        },
+        {
+          "column": "CK",
+          "row1": "Desarrollo familiar: intervención sugerida",
+          "row2": "Recomendación preliminar"
+        },
+        {
+          "column": "CL",
+          "row1": "Medicina/Pediatría: intervención sugerida",
+          "row2": "Según criterio clínico"
+        },
+        {
+          "column": "CM",
+          "row1": "Asesor comunitario / APH: apoyo sugerido",
+          "row2": "Sin actos clínicos"
+        },
+        {
+          "column": "CN",
+          "row1": "Psiquiatría: intervención sugerida",
+          "row2": "Según criterio especializado"
+        }
+      ]
+    },
+    {
+      "id": "rights",
+      "startColumn": "CO",
+      "endColumn": "CO",
+      "fields": [
+        {
+          "column": "CO",
+          "row1": "Derechos para recuperación",
+          "row2": "Derechos a garantizar y recuperar"
+        }
+      ]
+    },
+    {
+      "id": "ibiteProvenance",
+      "startColumn": "CP",
+      "endColumn": "CR",
+      "fields": [
+        {
+          "column": "CP",
+          "row1": "Institución educativa (IBITE)",
+          "row2": "Datos de encuesta"
+        },
+        {
+          "column": "CQ",
+          "row1": "Fila de origen (IBITE)",
+          "row2": "Trazabilidad"
+        },
+        {
+          "column": "CR",
+          "row1": "Prioridad IBITE",
+          "row2": "No es diagnóstico"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+# Instrucciones para Codex
+
+- Sigue SDD. Traza cada tarea desde su requisito hasta la especificación, reglas, contrato REST, aceptación, implementación, pruebas y documentación. Registra fuentes, conflictos, propuestas y decisiones pendientes. Implementa solamente incrementos autorizados cuya especificación esencial se haya validado.
+- Conserva el stack definido en el proyecto: Node.js, TypeScript, API REST, OpenAPI 3.x y Swagger, PostgreSQL, Prisma y PostGIS. Consulta los ADR para framework, versiones y decisiones aprobadas. Angular requiere autorización expresa.
+- Mantén un monolito modular si se aprueba el ADR. Separa transporte, casos de uso, reglas, validación y persistencia. Reutiliza lógica, conserva contratos y comportamiento existente, limita el alcance de los cambios y aplica ESLint y Prettier.
+- Aplica autorización por permiso y ámbito institucional en el backend, validación estricta, hash robusto para contraseñas, límites de intentos y auditoría sin datos sensibles. Usa datos sintéticos en ejemplos, semillas y pruebas. Excluye secretos y archivos sensibles del repositorio. Valida finalidad, acceso y conservación antes de procesar datos reales.
+- Versiona migraciones, reglas de puntuación e instrumentos. Usa restricciones y transacciones para integridad, migraciones SQL revisadas y SQL parametrizado donde corresponda. Solicita autorización antes de borrar datos, reiniciar bases, sustituir migraciones o realizar cambios destructivos.
+- Conserva fuentes históricas y trazabilidad. Repite importaciones sin duplicar datos. Trata archivos como datos, sin ejecutar macros. Usa únicamente metodologías aprobadas para puntuación, comparaciones e indicadores.
+- Mantén README, docs, ADR, CHANGELOG, OpenAPI, Postman y .env.example sincronizados cuando correspondan. Publica únicamente contratos vigentes como operativos.
+- Antes de cerrar una tarea, verifica aceptación y ejecuta las pruebas pertinentes en entornos aislados. Registra pruebas exitosas, fallidas y pendientes. Resume cambios, decisiones, archivos y siguiente paso. Consulta docs/README.md para el estado y alcance actual.

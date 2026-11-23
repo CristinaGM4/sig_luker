@@ -1,0 +1,18 @@
+name: sig-piloto-pago-test
+
+services:
+  db-test:
+    image: postgis/postgis:17-3.7@sha256:6bb0c694d6f06201b49d447fd9689ab57f3c7662de621ca35939cc57aafc522b
+    environment:
+      POSTGRES_DB: sig_test
+      POSTGRES_USER: sig_test
+      POSTGRES_PASSWORD: ${POSTGRES_TEST_PASSWORD:?Configura POSTGRES_TEST_PASSWORD en .env}
+    ports:
+      - "127.0.0.1:${POSTGRES_TEST_PORT:-55433}:5432"
+    tmpfs:
+      - /var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -h 127.0.0.1 -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"']
+      interval: 5s
+      timeout: 3s
+      retries: 20

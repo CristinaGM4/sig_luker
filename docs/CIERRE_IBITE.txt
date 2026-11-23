@@ -1,0 +1,89 @@
+CIERRE DEL COMPONENTE IBITE
+Estado al 21 de noviembre de 2026
+
+1. QUÉ FALTA QUE ENTREGUE O CONFIRME EL EQUIPO DEL PROYECTO
+
+[ ] Enviar el formulario oficial de IBITE-DA-28 para docentes,
+    administrativos, orientadores y directivos. Basta un enlace de lectura
+    o una exportación sin respuestas, con preguntas, opciones, campos
+    obligatorios, consentimiento y saltos. El motor DA-28 ya está probado.
+
+[ ] Identificar la cuenta institucional que usará el Dr. Felipe Agudelo
+    para activar y pausar la campaña. Está confirmada la autorización.
+    No enviar contraseñas, tokens ni otros secretos.
+
+[ ] Confirmar con el equipo del piloto cómo proceder si otra persona
+    declara el mismo documento o si un menor vuelve a entrar con otro
+    acudiente. El documento permite detectar repeticiones, pero por sí
+    solo no verifica identidad ni vínculo. En acudientes se usa el
+    documento del respondiente, nombre del estudiante y teléfono de
+    contacto. Si cambia el acudiente o el teléfono, la huella puede cambiar.
+
+[ ] Solo si el piloto incluye avisos automáticos, confirmar quién recibe
+    cada alerta, por qué canal y cómo se atiende. Las alertas consultables
+    por el equipo psicosocial ya están probadas con datos sintéticos.
+
+2. QUÉ FALTA IMPLEMENTAR Y VERIFICAR EN SIG-LUKER
+
+[ ] Activar los formularios oficiales de IBITE-17 para adolescente y
+    acudiente en el arranque operativo. Usar el material ya recibido
+    para reproducir las preguntas, los saltos, las decisiones de
+    consentimiento, los campos requeridos y las 17 respuestas puntuables.
+    Verificar que «No sé» guarda respuestas y permite puntuar, y que
+    una negativa detiene la captura y queda registrada.
+    Los 34 ítems puntuables y sus opciones ya están conectados a la
+    previsualización local. Falta la captura oficial completa.
+
+[ ] Aprovisionar las campañas para las diez instituciones del Periodo 2
+    y asignar el permiso de control y el alcance institucional a la cuenta
+    confirmada del Dr. Felipe. La API de activación y pausa ya existe.
+    El comprobador de solo lectura valida periodo, instituciones, las
+    dos variantes, campañas existentes y alcance del operador en sig_test.
+    Ver docs/08-pruebas/preparacion-piloto-ibite17.md.
+
+[ ] Configurar la clave estable en el entorno operativo y proteger el
+    enlace público con límites de solicitud y sesiones acotadas. La
+    detección de duplicados tras reiniciar Node ya pasó en la demo con
+    una clave estable de prueba.
+
+[ ] Ejecutar la aceptación de IBITE-17 en un entorno previo al piloto,
+    con datos sintéticos y formularios oficiales. Probar ambos perfiles,
+    acceso por enlace sin cuenta previa, consentimiento, negativas,
+    autorización incierta, acuse, reinicio, pausa y reanudación,
+    duplicados y lectura de alertas por institución.
+
+[ ] Incorporar el formulario de DA-28 a la API cuando llegue y verificar
+    apertura, captura, puntuación versionada, acuse y control de acceso.
+    Este punto se puede hacer después del piloto IBITE-17.
+
+3. LO QUE YA ESTÁ RESUELTO
+
+- Las diez instituciones priorizadas y el Periodo 2 del 25 de noviembre
+  al 10 de diciembre de 2026, ambos días incluidos.
+- La apertura por campaña sin aprobación individual ni requisito de
+  pertenecer a la primera muestra.
+- El aviso del formulario se conserva. Ya se verificaron las ramas y
+  la obligatoriedad de las 34 filas puntuables de IBITE-17.
+- «No sé» sobre autorización permite guardar y utilizar las respuestas.
+  La negativa explícita y la incertidumbre se tratan de forma distinta.
+- Ya se verificaron en la demo el envío, los resultados versionados, el
+  acuse, las alertas internas y el bloqueo de un duplicado tras reiniciar.
+- La conciliación y la importación histórica pueden avanzar en paralelo.
+  padron.xlsx es histórico de referencia y no bloquea el piloto.
+- Última verificación registrada: 40 pruebas automatizadas, más el ensayo
+  de reinicio de Node. Pasaron PostgreSQL, PostGIS, ESLint y Prettier.
+
+4. CRITERIO DE CIERRE
+
+IBITE-17 piloto se considera listo cuando ambas ramas oficiales pasen
+la aceptación de la sección 2 y el operador pueda activar y pausar las
+campañas correctas. IBITE completo incluye también la captura REST
+probada de DA-28. La demostración sintética ya está disponible, mientras
+que el arranque habitual aún no ofrece captura pública con el formulario
+oficial.
+
+Referencias internas:
+- docs/02-requerimientos/decisiones-2026-11-21.md
+- docs/05-contratos-api/ibite-habilitacion.md
+- docs/08-pruebas/demo-ibite17-post.md
+- docs/REPORTE_SESION_AUTONOMA.md

@@ -1,0 +1,22 @@
+{
+  "instrumentCode": "IBITE-17",
+  "sourceVersion": "manizales-respuestas-23",
+  "periodLabel": "Periodo 2",
+  "timeZone": "America/Bogota",
+  "startDate": "2026-11-25",
+  "endDateInclusive": "2026-12-10",
+  "opensAt": "2026-11-25T00:00:00-05:00",
+  "closesAtExclusive": "2026-12-11T00:00:00-05:00",
+  "institutions": [
+    "IE Fe y Alegría La Paz",
+    "IE Colegio de Cristo",
+    "IE Escuela Normal Superior de Manizales",
+    "IE La Asunción",
+    "IE Liceo Mixto Sinaí",
+    "IE Bosques del Norte",
+    "IE La Sultana",
+    "IE San Pío X",
+    "IE Instituto Latinoamericano",
+    "IE Instituto Técnico Francisco José de Caldas"
+  ]
+}
