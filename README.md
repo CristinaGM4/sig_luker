@@ -39,3 +39,9 @@ GET /api/v1/mis-aplicaciones-ibite lista las habilitaciones vigentes de la cuent
 GET /api/v1/interno/instituciones/{institucionId}/auditoria lista metadatos de [auditoría institucional](docs/05-contratos-api/auditoria-institucional.md) dentro del ámbito del equipo psicosocial.
 
 La [API pública del SIG](docs/05-contratos-api/sig-microzonificacion.md) incluye un catálogo de capas cargadas y la consulta GeoJSON de microzonificación. El mismo documento describe la verificación de solo lectura y la carga explícita de la edición revisada.
+
+Consulta pública de las 21 sedes aportadas implementada en GET `/api/v1/publico/sig/instituciones`. Contrato en `docs/05-contratos-api/instituciones-publicas.md`.
+
+## Frontend incluido
+
+El proyecto Angular está en frontend/. Con Node 24 ejecutar `cd frontend`, `npm ci` y `npm start`. Abrir http://localhost:4200/mapa. El proxy apunta al backend local en 3002, como se configura en .env.example. Consultar frontend/README.md.

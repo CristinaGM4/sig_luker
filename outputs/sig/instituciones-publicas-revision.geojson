@@ -1,0 +1,447 @@
+{
+  "type": "FeatureCollection",
+  "sourceSha256": "f9e4773b3cbe2150145165d97b63448060643f76a4e3d4493906068d6033cc6b",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 3026,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.49027799999999,
+          5.059443999834052
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-3",
+        "label": "INSTITUCION EDUCATIVA NORMAL SUP DE MANIZALES",
+        "dane": "117001000165",
+        "parentDane": "117001000165",
+        "principal": true,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3034,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.50416699999994,
+          5.061110999833993
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-9",
+        "label": "INSTITUCION EDUCATIVA INSTITUTO LATINOAMERICANO SEDE B",
+        "dane": "117001001030",
+        "parentDane": "117001000611",
+        "principal": false,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": "Asociación de consulta por nombre. Código de sede principal pendiente de validación."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3035,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.50527799899999,
+          5.062499999833972
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-9",
+        "label": "INSTITUCION EDUCATIVA INSTITUTO LATINOAMERICANO SEDE A",
+        "dane": "117001001323",
+        "parentDane": "117001000611",
+        "principal": false,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": "Asociación de consulta por nombre. Código de sede principal pendiente de validación."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3040,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.50021924599997,
+          5.072220344833658
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-1",
+        "label": "INSTITUCION EDUCATIVA FE Y ALEGRIA LA PAZ SEDE B",
+        "dane": "117001005124",
+        "parentDane": "117001001536",
+        "principal": false,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": "Asociación de consulta por nombre. Código de sede principal pendiente de validación."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3046,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.46527799999996,
+          5.030555999834996
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-8",
+        "label": "INSTITUCION EDUCATIVA SAN PIO X SEDE B",
+        "dane": "117001003181",
+        "parentDane": "117001002176",
+        "principal": false,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3047,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.45952580199997,
+          5.031958792834962
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-8",
+        "label": "INSTITUCION EDUCATIVA SAN PIO X SEDE C",
+        "dane": "117001003776",
+        "parentDane": "117001002176",
+        "principal": false,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3054,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.48749999999995,
+          5.067221999833831
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-4",
+        "label": "INSTITUCION EDUCATIVA LA ASUNCION SEDE B",
+        "dane": "117001004942",
+        "parentDane": "117001002346",
+        "principal": false,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": "Asociación de consulta por nombre. Código de sede principal pendiente de validación."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3057,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.58305599999994,
+          4.994166999836189
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-7",
+        "label": "INSTITUCION INTEG LA SULTANA",
+        "dane": "117001002711",
+        "parentDane": "117001002711",
+        "principal": true,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3058,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.47527800099994,
+          5.059443999834052
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-7",
+        "label": "INSTITUCION EDUCATIVA LA SULTANA SEDE A",
+        "dane": "117001005701",
+        "parentDane": "117001002711",
+        "principal": false,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3062,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.49444399999999,
+          5.067777999833772
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-4",
+        "label": "INSTITUCION EDUCATIVA LA ASUNCION SEDE A",
+        "dane": "117001000947",
+        "parentDane": "117001002737",
+        "principal": false,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3063,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.49444399999999,
+          5.065832999833858
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-4",
+        "label": "INSTITUCION EDUCATIVA LA ASUNCION",
+        "dane": "117001002737",
+        "parentDane": "117001002737",
+        "principal": true,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3070,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.48888900099996,
+          5.076110999833495
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-5",
+        "label": "INSTITUCION EDUCATIVA LICEO MIXTO SINAI SECCION BASICA PRIMARIA A",
+        "dane": "117001003890",
+        "parentDane": "117001005256",
+        "principal": false,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3071,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.47950133899997,
+          5.066788095833809
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-5",
+        "label": "INSTITUCION EDUCATIVA LICEO MIXTO SINAI",
+        "dane": "117001005256",
+        "parentDane": "117001005256",
+        "principal": true,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3075,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.49506562499994,
+          5.073653843833584
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-1",
+        "label": "INSTITUCION EDUCATIVA FE Y ALEGRIA LA PAZ SEDE A",
+        "dane": "117001004993",
+        "parentDane": "117001005981",
+        "principal": false,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3076,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.49499999999995,
+          5.074721998833589
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-1",
+        "label": "INSTITUCION EDUCATIVA FE Y ALEGRIA LA PAZ",
+        "dane": "117001005981",
+        "parentDane": "117001005981",
+        "principal": true,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3078,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.49249999999995,
+          5.071666999833661
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-5",
+        "label": "INSTITUCION EDUCATIVA LICEO MIXTO SINAI SEDE B",
+        "dane": "117001004357",
+        "parentDane": "117001005990",
+        "principal": false,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": "Asociación de consulta por nombre. Código de sede principal pendiente de validación."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3079,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.48944399999993,
+          5.083055999833297
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-6",
+        "label": "INSTITUCION EDUCATIVA BOSQUES DEL NORTE",
+        "dane": "117001005990",
+        "parentDane": "117001005990",
+        "principal": true,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3084,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.50879099999997,
+          5.066980998833832
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-10",
+        "label": "INSTITUCION EDUCATIVA INSTITUTO TECNICO FRANCISCO JOSE DE CALDAS",
+        "dane": "117001006155",
+        "parentDane": "117001006155",
+        "principal": true,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3085,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.47166699999997,
+          5.061943999833968
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-7",
+        "label": "INSTITUCION EDUCATIVA LA SULTANA",
+        "dane": "117001006180",
+        "parentDane": "117001006180",
+        "principal": false,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": "Asociación de consulta por nombre. Código de sede principal pendiente de validación."
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 47529,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.48055599999998,
+          5.053610999834243
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-2",
+        "label": "INSTITUCION EDUCATIVA COLEGIO DE CRISTO",
+        "dane": "317001000075",
+        "parentDane": "317001000075",
+        "principal": true,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": null
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 55651,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -75.45944400099995,
+          5.030555999834996
+        ]
+      },
+      "properties": {
+        "institutionKey": "referencia-8",
+        "label": "INSTITUCION EDUCATIVA SAN PIO X",
+        "dane": "117001002176",
+        "parentDane": "",
+        "principal": true,
+        "source": "instituciones.gpkg",
+        "mappingBasis": "reference-name",
+        "mappingNote": "Asociación de consulta por nombre. Código de sede principal pendiente de validación."
+      }
+    }
+  ]
+}

@@ -42,3 +42,5 @@
 [Ensayo de respaldo y restauración](08-pruebas/recuperacion-datos.md)
 
 [Consulta SIG de microzonificación de 2002](05-contratos-api/sig-microzonificacion.md)
+
+Consulta pública de las 21 sedes aportadas implementada en GET `/api/v1/publico/sig/instituciones`. Contrato en `05-contratos-api/instituciones-publicas.md`.
