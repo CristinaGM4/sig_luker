@@ -494,16 +494,6 @@
         "method": "GET",
         "url": "{{baseUrl}}/api/v1/publico/sig/microzonificacion?bbox=-76,5,-75,6"
       }
-    },
-    {
-      "name": "Consultar sedes educativas públicas",
-      "request": {
-        "method": "GET",
-        "auth": {
-          "type": "noauth"
-        },
-        "url": "{{baseUrl}}/api/v1/publico/sig/instituciones"
-      }
     }
   ]
 }

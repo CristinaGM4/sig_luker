@@ -1,4 +1,3 @@
-import { PublicInstitutionsController } from "../geo/public-institutions.controller.js";
 import { InstitutionalAuditController } from "../ibite/institutional-audit.controller.js";
 import { MyIbiteAssignmentsController } from "../ibite/my-assignments.controller.js";
 import { AssignmentsController } from "../ibite/assignments.controller.js";
@@ -41,7 +40,6 @@ import { CatalogsService } from "./catalogs.service.js";
     InstitutionPointsController,
     MicrozonificationController,
     PublicGeoLayersController,
-    PublicInstitutionsController,
   ],
   providers: [CatalogsService],
 })

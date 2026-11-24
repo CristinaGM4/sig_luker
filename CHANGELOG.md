@@ -171,7 +171,3 @@
 
 - Agregada carga de GeoJSON validado con procedencia por archivo y posición.
 - Verificados rechazo del lote inválido, reintentos concurrentes y recorte del punto importado.
-
-## 2026-11-23 · Sedes públicas
-
-Ruta pública, importación idempotente de 21 puntos, migración, trazabilidad de origen y pruebas. Siete asociaciones requieren validación de código principal.
